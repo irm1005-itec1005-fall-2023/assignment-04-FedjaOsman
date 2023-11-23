@@ -4,43 +4,120 @@
  * You can modify these styles but you don't have to
  */
 
-/*
- VARIABLES
-*/
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
 
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
+/*SETTING UP STYLES LATER*/
+/*CURRENT STYLES FOR TESTING JAVASCRIPT*/
 
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
-}
-
-/*
-  PAGE / BODY
-*/
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
-}
-
-main {
-  min-height: 100vh;
-
+  height: 100vh;
+  background: rgb(185, 185, 152);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
+/*////////////////////////////////////////////////////////////*/
+
+
+.containers{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  
+  border: 2px solid black;
+}
+
+.counters{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  margin: 1rem;
+}
+
+.todoCount{
+  margin-right: 1rem;
+}
+
+.deleteBtn{
+  margin-right: 1rem;
+}
+
+/*////////////////////////////////////////////////////////////*/
+.input{
+  display: flex;
+  position: relative;
+
+}
+
+.btn{
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid white;
+  position: absolute;
+  right: 0.5rem;
+  border-radius: 2rem;
+  align-self: center;
+ 
+}
+
+.inputBox{
+  color: white;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 2rem;
+  width: 100%;
+}
+
+input[type="text"]::placeholder{
+  color: red;
+
+}
+
+/*////////////////////////////////////////////////////////////*/
+.todoContainer{
+  display: flex;
+  gap: 1rem
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+}
+
+li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+}
+
+#todoList{
+  color: red;
+}
+
+/*////////////////////////////////////////////////////////////*/
+.clearBtn{
+  border: none;
+}
+
+li.completed span{
+  text-decoration: line-through;
+}
 
 /****** Screen reader text utility clsas *******/
 .sr-only {

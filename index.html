@@ -1,51 +1,58 @@
 <!DOCTYPE html>
+
 <html lang="en-ca">
+  <head>
+    <title>Peel & Prioritize</title>
 
-<head>
-  <!-- Set the page title -->
-  <title>Assignment 04 - Finishing a Todo List App</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Set the charset we're using to UTF-8 -->
-  <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <!-- Set the screens default zoom / scale to 1 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+ 
+    <link rel="icon" href="./images/favicon/kuri.png" type="image/svg+xml" />
+  </head>
 
-  <!-- Specifies the document mode for Internet Explorer -->
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <body>
+    
+    <main>
+      <section class="todo">
+        <h1>TITLE PLACEHOLDER</h1>
 
-  <!-- Set the CSS Reset File -->
-  <link rel="stylesheet" href="./reset.css" />
+        <ul class="list" id="todoList"> </ul>
 
-  <!-- Set the main stylesheet -->
-  <link rel="stylesheet" href="./style.css" />
 
-  <!-- Set the Favicon  -->
-  <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
-</head>
-<body>
+        <section class="containers">
+          <section class="counters"> 
+            <div class="todoCount">
+              <p><span>0</span> Tasks left</p>
+            </div>
+    
+            <div class="doneCount">
+              <p><span>0</span> Tasks done</p>
+            </div>
+          </section>
+          
+          <div class="deleteBtn">
+            <button class="clearBtn">Clear All</button>
+          </div>
+        </section>
 
-  <!--
 
-    Assignment 04 - Finishing a Todo List App
+        <div class="input">
+          <input class="inputBox" 
+                id="todoInput" 
+                type="text"
+                placeholder="Add Layer ToDo.."
+          />
+          <button class="btn">Add</button>
+        </div>
 
-    Instructions:
+      </section>
+    </main>
 
-    Important checklist:
-
-    - Are users able to create and delete to do list items?
-    - Have you set a favicon? (included - but it's a rocket)
-    - Has a team member conducted a code review and left a GitHub Issue in your repo?
-    - Have you conducted a code review and left a GitHub Issue on your team member's repo?
-
-  -->
-
-  <main>
-    <div id="app"></div>
-  </main>
-
-  <!-- Add JavaScript File -->
-  <script src="./script.js"></script>
-
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
