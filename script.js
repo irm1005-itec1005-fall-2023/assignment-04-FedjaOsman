@@ -1,3 +1,5 @@
+
+// Setting things up ///////////////////////////////////////////////////////
 // Selecting elements
 const inputBox = document.getElementById("todoInput");
 const addButton = document.querySelector(".btn");
@@ -38,7 +40,7 @@ clearButton.addEventListener("click", function(){
   clearAllTasks();
 });
 
-// Function to add a new task///////////////////////////////////////////////
+// Function to add a new task //////////////////////////////////////////////
 function addTask(){
   const taskText = inputBox.value;
   if (taskText !== ""){
@@ -51,7 +53,7 @@ function addTask(){
     // Set attributes and content
     checkbox.type = "checkbox";
     taskTextSpan.textContent = taskText;
-    deleteButton.textContent = "Delete";
+    deleteButton.textContent = "\u00d7";
     deleteButton.classList.add("deleteTask");
 
     // Append elements to the list item
@@ -64,22 +66,21 @@ function addTask(){
 
     inputBox.value = "";
     updateTaskCount();
-
   }
 }
 
 // Function to toggle the status of a task (checked or unchecked) //////////
 function toggleTaskStatus(checkbox){
-    const listItem = checkbox.parentElement;
-    listItem.classList.toggle("completed");
+  const listItem = checkbox.parentElement;
+  listItem.classList.toggle("completed");
 
-    if (listItem.classList.contains("completed")){
-        todoList.appendChild(listItem);
-    }else{
-        todoList.prepend(listItem, todoList.firstChild);
-    }
+  if (listItem.classList.contains("completed")){
+    todoList.appendChild(listItem);
+  }else{
+    todoList.prepend(listItem, todoList.firstChild);
+  }
 
-    updateTaskCount();
+  updateTaskCount();
 }
 
 // Function to delete a task //////////////////////////////////////////////

@@ -1,17 +1,9 @@
-/*
- * CSS File for the solution
- * Assignment 03
- * You can modify these styles but you don't have to
- */
-
-
-/*SETTING UP STYLES LATER*/
-/*CURRENT STYLES FOR TESTING JAVASCRIPT*/
-
+/*////////////////////////////////////////////////////////////*/
 body {
   font-family: Arial, Helvetica, sans-serif;
   height: 100vh;
-  background: rgb(185, 185, 152);
+  background-image: url("./images/background.png");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -19,8 +11,6 @@ body {
 }
 
 /*////////////////////////////////////////////////////////////*/
-
-
 .containers{
   display: flex;
   flex-direction: row;
@@ -101,9 +91,10 @@ li{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
   background-color: white;
+  border-radius: 2rem;
 }
 
 #todoList{
