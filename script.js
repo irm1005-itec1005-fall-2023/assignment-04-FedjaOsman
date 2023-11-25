@@ -62,11 +62,13 @@ function addTask(){
     listItem.appendChild(deleteButton);
 
     // Append the list item to the todo list
-    todoList.appendChild(listItem);
+    todoList.prepend(listItem);
 
     inputBox.value = "";
     updateTaskCount();
-  }
+  }else{
+    alert("Please enter a task to peel away at!");
+    }
 }
 
 // Function to toggle the status of a task (checked or unchecked) //////////

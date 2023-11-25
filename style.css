@@ -6,8 +6,24 @@ body {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
+  
+}
+
+.todo ul{
+  width: 100%;
+  max-height: 70vh; /* Adjust the max height as needed */
+  overflow-y: auto;
+  
+}
+/*////////////////////////////////////////////////////////////*/
+h1 {
+  margin-top: 3vw;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  text-shadow: 0rem 0rem 2rem black;
 }
 
 /*////////////////////////////////////////////////////////////*/
@@ -16,8 +32,9 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  
-  border: 2px solid black;
+  background-color: white;
+  border-radius: 2rem;
+  border: 2px solid #adadad;
 }
 
 .counters{
@@ -26,7 +43,6 @@ body {
   justify-content: space-evenly;
   align-items: center;
 
-  margin: 1rem;
 }
 
 .todoCount{
@@ -45,31 +61,45 @@ body {
 }
 
 .btn{
-  color: white;
+  margin-top: 1vw;
+  color: black;
   font-weight: 700;
   font-size: 1.2rem;
   padding: 0.5rem 1.5rem;
-  background-color: transparent;
-  border: 1px solid white;
+  background-color: white;
+  border: 2px solid black;
   position: absolute;
   right: 0.5rem;
   border-radius: 2rem;
   align-self: center;
+  margin-bottom: 3vw;
  
 }
 
+.btn:hover{
+  background-color: white;
+  color: green;
+  cursor: pointer;
+}
+
 .inputBox{
+  margin-top: 1vw;
   color: white;
   font-weight: 700;
   padding: 1rem 2rem;
-  background-color: transparent;
-  border: 3px solid white;
+  background-color: pink;
+  border: 2px solid black;
   border-radius: 2rem;
   width: 100%;
+  margin-bottom: 3vw;
+}
+
+.inputBox:focus{
+  outline: none;
 }
 
 input[type="text"]::placeholder{
-  color: red;
+  color: black;
 
 }
 
@@ -84,7 +114,9 @@ ul{
   margin: 0;
   display: flex;
   flex-direction: column;
-
+  scrollbar-width: thin; /* For Firefox */
+  -ms-overflow-style: thin; /* For Internet Explorer and Edge */
+  scrollbar-color: #d4d4d4 transparent;
 }
 
 li{
@@ -94,22 +126,67 @@ li{
   margin-bottom: 1rem;
   padding: 0.5rem;
   background-color: white;
-  border-radius: 2rem;
+  border: 2px solid #adadad;
+  border-radius: 3rem;
 }
 
 #todoList{
-  color: red;
+  color: rgb(44, 43, 43);
+  font-weight: 600;
 }
 
 /*////////////////////////////////////////////////////////////*/
 .clearBtn{
   border: none;
+  background: none;
+  color: #cf9e9e;
+  font-weight: 900;
+}
+
+.clearBtn:hover{
+  color: #0956e6;
+  cursor: pointer;
+}
+
+.doneCount span{
+  color: green;
+  font-weight: 600;
+}
+
+.todoCount span{
+  color: red;
+  font-weight: 600;
+}
+
+li span{
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 li.completed span{
   text-decoration: line-through;
 }
 
+.deleteTask{
+  margin-right: 1rem;
+  color: #cf9e9e;
+  font-weight: 900;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.deleteTask:hover{
+  color: #e60909;
+}
+
+.list input[type="checkbox"]{
+  margin-left: 1rem;
+}
+
+/*////////////////////////////////////////////////////////////*/
 /****** Screen reader text utility clsas *******/
 .sr-only {
   position: absolute;
