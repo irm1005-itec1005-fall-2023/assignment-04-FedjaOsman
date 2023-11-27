@@ -166,6 +166,7 @@ li span{
 
 li.completed span{
   text-decoration: line-through;
+  color: #adadad;
 }
 
 .deleteTask{
