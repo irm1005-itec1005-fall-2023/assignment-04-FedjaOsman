@@ -84,6 +84,30 @@ function toggleTaskStatus(checkbox){
   }
 
   updateTaskCount();
+  saveCheckbox();
+}
+
+// Function to save checkboxes
+// Used ChatGPT for this function
+function saveCheckbox(){
+  const checkboxStates = Array.from(todoList.querySelectorAll('input[type="checkbox"]')).map(checkbox => checkbox.checked);
+  localStorage.setItem("checkboxStates", JSON.stringify(checkboxStates));
+}
+
+// Function to load checkbox states on reload /////////////////////////////
+// Used ChatGPT for this function
+function LoadCheckbox(){
+  const checkboxStates = JSON.parse(localStorage.getItem("checkboxStates")) || [];
+  const checkboxes = todoList.querySelectorAll('input[type="checkbox"]');
+  
+  checkboxes.forEach((checkbox, index) => {
+    checkbox.checked = checkboxStates[index] || false;
+    if (checkboxStates[index]) {
+      const listItem = checkbox.parentElement;
+      listItem.classList.add("completed");
+      todoList.appendChild(listItem);
+    }
+  });
 }
 
 // Function to delete a task //////////////////////////////////////////////
@@ -108,13 +132,14 @@ function updateTaskCount(){
 }
 
 // Function for memory ////////////////////////////////////////////////////
-// !! NEED TO FIX CHECKBOX STATE ON REFRESH !!
  function saveList(){
   localStorage.setItem("todoList", todoList.innerHTML);
 }
 
 function loadList(){
   todoList.innerHTML = localStorage.getItem("todoList");
+
+  LoadCheckbox();
   updateTaskCount();
 }
 
