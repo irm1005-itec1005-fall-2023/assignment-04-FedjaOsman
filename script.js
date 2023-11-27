@@ -105,3 +105,22 @@ function updateTaskCount(){
   todoCount.textContent = totalTasks - completedTasks;
   doneCount.textContent = completedTasks;
 }
+
+// Function for memory ////////////////////////////////////////////////////
+// !! NEED TO FIX CHECKBOX STATE ON REFRESH !!
+function saveList(){
+  localStorage.setItem("todoList", todoList.innerHTML);
+}
+
+function loadList(){
+  todoList.innerHTML = localStorage.getItem("todoList");
+  updateTaskCount();
+}
+
+// Load the list from memory
+loadList();
+
+// Save the list to memory when the window is closed
+window.addEventListener("beforeunload", function(){
+  saveList();
+});
