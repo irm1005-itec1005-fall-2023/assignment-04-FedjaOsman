@@ -169,6 +169,10 @@ li.completed span{
   color: #adadad;
 }
 
+li.completed{
+  border-style:dashed;
+}
+
 .deleteTask{
   margin-right: 1rem;
   color: #cf9e9e;

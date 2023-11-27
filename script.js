@@ -65,6 +65,7 @@ function addTask(){
     todoList.prepend(listItem);
 
     inputBox.value = "";
+    
     updateTaskCount();
   }else{
     alert("Please enter a task to peel away at!");
@@ -108,7 +109,7 @@ function updateTaskCount(){
 
 // Function for memory ////////////////////////////////////////////////////
 // !! NEED TO FIX CHECKBOX STATE ON REFRESH !!
-function saveList(){
+ function saveList(){
   localStorage.setItem("todoList", todoList.innerHTML);
 }
 
@@ -123,4 +124,14 @@ loadList();
 // Save the list to memory when the window is closed
 window.addEventListener("beforeunload", function(){
   saveList();
-});
+}); 
+
+
+// second method, rematch variable names /////////////////////////////
+/* function saveData(){
+  localStorage.setItem("data", listContainer.innerHTML);
+}
+function showTask(){
+  listContainer.innerHTML = localStorage.getItems("data");
+}
+showTask(); */
