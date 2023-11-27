@@ -68,7 +68,7 @@ function addTask(){
     
     updateTaskCount();
   }else{
-    alert("Please enter a task to peel away at!");
+    alert("                       ▓▓██\n                    ▓▓▓▓  ▓▓██▓▓▓▓\n               ▓▓████▓▓▓▓▓▓████▓▓\n             ██    ██▓▓██    ██\n                   ██▓▓██\n                         ██░░▓▓██\n                     ██▓▓░░░░▓▓██\n                 ██░░░░░░░░░░░░██\n             ██▒▒░░░░░░░░░░░░▒▒██\n         ██░░░░░░░░░░░░░░░░░░░░██\n     ██▒▒░░░░░░░░░░░░░░░░░░░░▒▒██\n   ██░░░░░░████░░░░████░░░░░░██\n   ██░░░░░░████░░░░████░░░░░░██\n   ██░░░░░░░░░░░░░░░░░░░░░░░░██\n   ██▒▒░░░░░░░░░░░░░░░░░░░░▒▒██\n     ██▒▒░░░░░░░░░░░░░░░░▒▒██\n         ████████████████████  \n\nOOPS! (ㅠ﹏ㅠ)\nThis onion's already been peeled!\nPlease enter a task to peel away at!");
     }
 }
 
@@ -87,7 +87,9 @@ function toggleTaskStatus(checkbox){
   saveCheckbox();
 }
 
-// Function to save checkboxes
+// Following two functions are for keeping track of checkbox states when
+// refreshing page. 
+// Function to save checkboxes ////////////////////////////////////////////
 // Used ChatGPT for this function
 function saveCheckbox(){
   const checkboxStates = Array.from(todoList.querySelectorAll('input[type="checkbox"]')).map(checkbox => checkbox.checked);
@@ -143,6 +145,8 @@ function loadList(){
   updateTaskCount();
 }
 
+
+// Loading and saving for page startup and close //////////////////////////
 // Load the list from memory
 loadList();
 
@@ -151,12 +155,4 @@ window.addEventListener("beforeunload", function(){
   saveList();
 }); 
 
-
-// second method, rematch variable names /////////////////////////////
-/* function saveData(){
-  localStorage.setItem("data", listContainer.innerHTML);
-}
-function showTask(){
-  listContainer.innerHTML = localStorage.getItems("data");
-}
-showTask(); */
+ 
