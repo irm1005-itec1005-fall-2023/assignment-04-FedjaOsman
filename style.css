@@ -8,15 +8,14 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  
 }
 
 .todo ul{
   width: 100%;
-  max-height: 70vh; /* Adjust the max height as needed */
+  max-height: 70vh;
   overflow-y: auto;
-  
 }
+
 /*////////////////////////////////////////////////////////////*/
 h1 {
   margin-top: 3vw;
@@ -42,7 +41,6 @@ h1 {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-
 }
 
 .todoCount{
@@ -57,7 +55,6 @@ h1 {
 .input{
   display: flex;
   position: relative;
-
 }
 
 .btn{
@@ -73,7 +70,6 @@ h1 {
   border-radius: 2rem;
   align-self: center;
   margin-bottom: 3vw;
- 
 }
 
 .btn:hover{
@@ -100,7 +96,6 @@ h1 {
 
 input[type="text"]::placeholder{
   color: black;
-
 }
 
 /*////////////////////////////////////////////////////////////*/
@@ -158,6 +153,7 @@ li{
   font-weight: 600;
 }
 
+/*////////////////////////////////////////////////////////////*/
 li span{
   font-size: 1.2rem;
   margin-right: 0.5rem;
