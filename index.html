@@ -1,51 +1,82 @@
 <!DOCTYPE html>
+
 <html lang="en-ca">
+  <head>
+    <title>Peel It</title>
 
-<head>
-  <!-- Set the page title -->
-  <title>Assignment 04 - Finishing a Todo List App</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Set the charset we're using to UTF-8 -->
-  <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <!-- Set the screens default zoom / scale to 1 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
 
-  <!-- Specifies the document mode for Internet Explorer -->
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="./images/favicon/kuri.png" type="image/svg+xml" />
+  </head>
 
-  <!-- Set the CSS Reset File -->
-  <link rel="stylesheet" href="./reset.css" />
+  <!-- CITATIONS 
 
-  <!-- Set the main stylesheet -->
-  <link rel="stylesheet" href="./style.css" />
+- A quick and easy way I found to set page background, and then resize it.
+  https://developer.mozilla.org/en-US/docs/Web/CSS/background-image
+  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_backgrounds_and_borders/Resizing_background_images
 
-  <!-- Set the Favicon  -->
-  <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
-</head>
-<body>
+- Alert pop up if blank task is entered
+  https://www.w3schools.com/js/js_popup.asp
 
-  <!--
+- Removing the 'focus' on the text input box when typing, I'm not sure if this is just firefox behaviour or consistent across browsers.
+  https://developer.mozilla.org/en-US/docs/Web/CSS/:focus
 
-    Assignment 04 - Finishing a Todo List App
+- For saving todo list state to memory
+  https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage, 
+  and GitHub Copilot
+  
+- Used ChatGPT for figuring out how to track checkbox states since I was having issues with that
+  saveCheckbox(), and loadCheckbox() functions.
 
-    Instructions:
 
-    Important checklist:
+-->
 
-    - Are users able to create and delete to do list items?
-    - Have you set a favicon? (included - but it's a rocket)
-    - Has a team member conducted a code review and left a GitHub Issue in your repo?
-    - Have you conducted a code review and left a GitHub Issue on your team member's repo?
+  <body>
+    <main>
+      <section class="Title"><h1>Peel & Prioritize</h1></section>
 
-  -->
+      <div class="todo">
+        <ul class="list" id="todoList"></ul>
 
-  <main>
-    <div id="app"></div>
-  </main>
+        <div class="containers">
+          <div class="counters">
+            <div class="todoCount">
+              <p><span>0</span> Tasks left</p>
+            </div>
 
-  <!-- Add JavaScript File -->
-  <script src="./script.js"></script>
+            <div class="doneCount">
+              <p><span>0</span> Tasks done</p>
+            </div>
+          </div>
 
-</body>
+          <div class="deleteBtn">
+            <button class="clearBtn">Clear All</button>
+          </div>
+        </div>
+
+        <form class="input" autocomplete="off">
+          <input
+            class="inputBox"
+            id="todoInput"
+            type="text"
+            placeholder="Add Layer ToDo.."
+          />
+          <button class="btn">Add</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+        <img id="initial" src="./images/KuriStart.png" alt="Kuri telling you to get busy!" style="display: none;">
+        <p id="copyright" class="copyright">Copyright © 2023 Peel It</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
