@@ -192,6 +192,24 @@ li.completed{
 }
 
 /*////////////////////////////////////////////////////////////*/
+#initial{
+  display: block;
+  width: 30vh;
+  position: relative;
+}
+
+#copyright{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0rem 0rem 2rem black;
+  margin-right: 0.5rem;
+  
+}
+
 /****** Screen reader text utility clsas *******/
 .sr-only {
   position: absolute;

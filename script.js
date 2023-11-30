@@ -9,13 +9,15 @@ const doneCount = document.querySelector(".doneCount span");
 const clearButton = document.querySelector(".clearBtn");
 
 // Event listener for the add button
-addButton.addEventListener("click", function(){
+addButton.addEventListener("click", function(e){
+  e.preventDefault();
   addTask();
 });
 
 // Event listener for the input box (pressing Enter)
 inputBox.addEventListener("keypress", function(e){
   if (e.key === "Enter") {
+    e.preventDefault();
     addTask();
   }
 });
@@ -67,6 +69,7 @@ function addTask(){
     inputBox.value = "";
     
     updateTaskCount();
+    saveList();
   }else{
     alert("                       ▓▓██\n                    ▓▓▓▓  ▓▓██▓▓▓▓\n               ▓▓████▓▓▓▓▓▓████▓▓\n             ██    ██▓▓██    ██\n                   ██▓▓██\n                         ██░░▓▓██\n                     ██▓▓░░░░▓▓██\n                 ██░░░░░░░░░░░░██\n             ██▒▒░░░░░░░░░░░░▒▒██\n         ██░░░░░░░░░░░░░░░░░░░░██\n     ██▒▒░░░░░░░░░░░░░░░░░░░░▒▒██\n   ██░░░░░░████░░░░████░░░░░░██\n   ██░░░░░░████░░░░████░░░░░░██\n   ██░░░░░░░░░░░░░░░░░░░░░░░░██\n   ██▒▒░░░░░░░░░░░░░░░░░░░░▒▒██\n     ██▒▒░░░░░░░░░░░░░░░░▒▒██\n         ████████████████████  \n\nOOPS! (ㅠ﹏ㅠ)\nThis onion's already been peeled!\nPlease enter a task to peel away at!");
     }
@@ -85,6 +88,7 @@ function toggleTaskStatus(checkbox){
 
   updateTaskCount();
   saveCheckbox();
+  saveList();
 }
 
 // Following two functions are for keeping track of checkbox states when
@@ -94,6 +98,7 @@ function toggleTaskStatus(checkbox){
 function saveCheckbox(){
   const checkboxStates = Array.from(todoList.querySelectorAll('input[type="checkbox"]')).map(checkbox => checkbox.checked);
   localStorage.setItem("checkboxStates", JSON.stringify(checkboxStates));
+  saveList();
 }
 
 // Function to load checkbox states on reload /////////////////////////////
@@ -131,6 +136,13 @@ function updateTaskCount(){
 
   todoCount.textContent = totalTasks - completedTasks;
   doneCount.textContent = completedTasks;
+
+  const noTaskIamge = document.getElementById("initial");
+  if (totalTasks === 0){
+    noTaskIamge.style.display = "block";
+  }else{
+    noTaskIamge.style.display = "none";
+  }
 }
 
 // Function for memory ////////////////////////////////////////////////////
