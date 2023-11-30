@@ -31,20 +31,21 @@
   https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage, 
   and GitHub Copilot
   
-- Used ChatGPT for figuring out how to track checkbox states since I was having issues with that.
-  saveCheckbox(), and loadCheckbox() functions in script.js.
+- Used ChatGPT for figuring out how to track checkbox states since I was having issues with that
+  saveCheckbox(), and loadCheckbox() functions.
 
 
 -->
+
   <body>
     <main>
       <section class="Title"><h1>Peel & Prioritize</h1></section>
 
-      <section class="todo">
+      <div class="todo">
         <ul class="list" id="todoList"></ul>
 
-        <section class="containers">
-          <section class="counters">
+        <div class="containers">
+          <div class="counters">
             <div class="todoCount">
               <p><span>0</span> Tasks left</p>
             </div>
@@ -52,12 +53,12 @@
             <div class="doneCount">
               <p><span>0</span> Tasks done</p>
             </div>
-          </section>
+          </div>
 
           <div class="deleteBtn">
             <button class="clearBtn">Clear All</button>
           </div>
-        </section>
+        </div>
 
         <form class="input" autocomplete="off">
           <input
@@ -67,7 +68,7 @@
             placeholder="Add Layer ToDo.."
           />
           <button class="btn">Add</button>
-        </form>
+        </div>
       </section>
     </main>
 

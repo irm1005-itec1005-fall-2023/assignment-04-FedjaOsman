@@ -71,6 +71,7 @@ function addTask(){
     updateTaskCount();
     saveList();
   }else{
+    // Sorry this looks horrible but I wanted to make an onion!
     alert("                       ▓▓██\n                    ▓▓▓▓  ▓▓██▓▓▓▓\n               ▓▓████▓▓▓▓▓▓████▓▓\n             ██    ██▓▓██    ██\n                   ██▓▓██\n                         ██░░▓▓██\n                     ██▓▓░░░░▓▓██\n                 ██░░░░░░░░░░░░██\n             ██▒▒░░░░░░░░░░░░▒▒██\n         ██░░░░░░░░░░░░░░░░░░░░██\n     ██▒▒░░░░░░░░░░░░░░░░░░░░▒▒██\n   ██░░░░░░████░░░░████░░░░░░██\n   ██░░░░░░████░░░░████░░░░░░██\n   ██░░░░░░░░░░░░░░░░░░░░░░░░██\n   ██▒▒░░░░░░░░░░░░░░░░░░░░▒▒██\n     ██▒▒░░░░░░░░░░░░░░░░▒▒██\n         ████████████████████  \n\nOOPS! (ㅠ﹏ㅠ)\nThis onion's already been peeled!\nPlease enter a task to peel away at!");
     }
 }
@@ -166,5 +167,3 @@ loadList();
 window.addEventListener("beforeunload", function(){
   saveList();
 }); 
-
- 
